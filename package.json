@@ -1,0 +1,33 @@
+{
+  "name": "lab-intake-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziplabdev/lab-intake-back-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ziplabdev/lab-intake-back-end/issues"
+  },
+  "homepage": "https://github.com/ziplabdev/lab-intake-back-end#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "encoding": "^0.1.13",
+    "express": "^4.17.2",
+    "googleapis": "^92.0.0",
+    "luxon": "^2.3.0",
+    "netlify-lambda": "^2.0.15",
+    "node-fetch": "^2.6.7",
+    "serverless-http": "^2.7.0"
+  }
+}
