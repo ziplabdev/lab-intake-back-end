@@ -26,7 +26,7 @@ var spreadsheetLength
 // step 1
 router.get("/formdata", async (req, res) => {
 
-    // * getSpreadsheetIdFromRes()
+    // * getSpreadsheetIdFromRes( )
     await getSpreadsheetIdFromRes().then(()=> {}).catch(e=>console.log(e))
     // * getSpreadSheet()
     await getSpreadsheet().then(()=> {}).catch(e=>console.log(e))
