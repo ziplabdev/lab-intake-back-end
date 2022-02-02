@@ -27,9 +27,9 @@ var spreadsheetLength
 router.get("/formdata", async (req, res) => {
 
     // * getSpreadsheetIdFromRes()
-    await getSpreadsheetIdFromRes()
+    await getSpreadsheetIdFromRes().then(()=> {}).catch(e=>console.log(e))
     // * getSpreadSheet()
-    await getSpreadsheet()
+    await getSpreadsheet().then(()=> {}).catch(e=>console.log(e))
 
     // * filter(questions)
     const questions = filterSpreadsheet('questions')
