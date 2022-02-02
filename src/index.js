@@ -63,6 +63,7 @@ router.post("/submitform", (req, res) => {
 // for admin update clickup
 router.post("/getUpdates", (req, res) => {
     console.log('updates')
+    res.send({"post" : "post"})
     // updateClickUp()
 })
 
@@ -70,6 +71,8 @@ router.post("/updateSpreadsheetId", async (req, res) => {
     // update google form with new spreadsheet Id
     await getSpreadsheetIdFromRes()
     await updateSpreadsheetId({values:[req.body.id]})
+
+    res.send({"update" : "update"})
 })
 
 /* 
@@ -276,7 +279,7 @@ const sendToClickUp = async (toSend) => {
             'Authorization' : 'pk_26305353_3XX1NTVANB2LZ7CNPO1VIPFFEBNASSY0',
             'Content-Type': 'application/json' 
         }
-    }).then(res => res.json())
+    }).then(res => {return res.json()})
       .then(json => {
         teamId = json.teams[0].id
         console.log('got the team')
@@ -288,7 +291,7 @@ const sendToClickUp = async (toSend) => {
             'Authorization' : 'pk_26305353_3XX1NTVANB2LZ7CNPO1VIPFFEBNASSY0',
             'Content-Type': 'application/json' 
         }
-    }).then(res => res.json())
+    }).then(res => {return res.json()})
       .then(json => {
         spaceId = json.spaces[0].id 
     })
@@ -299,7 +302,7 @@ const sendToClickUp = async (toSend) => {
             'Authorization' : 'pk_26305353_3XX1NTVANB2LZ7CNPO1VIPFFEBNASSY0',
             'Content-Type': 'application/json' 
         }
-    }).then(res => res.json())
+    }).then(res => {return res.json()} )
       .then(json => {
         folderId = json.folders[0].id
     })
@@ -310,7 +313,7 @@ const sendToClickUp = async (toSend) => {
             'Authorization' : 'pk_26305353_3XX1NTVANB2LZ7CNPO1VIPFFEBNASSY0',
             'Content-Type': 'application/json' 
         }
-    }).then(res => res.json())
+    }).then(res => {return res.json()})
       .then(json => {
         listId = json.lists[0].id
     })
@@ -354,7 +357,7 @@ const sendToClickUp = async (toSend) => {
             'Authorization' : 'pk_26305353_3XX1NTVANB2LZ7CNPO1VIPFFEBNASSY0',
             'Content-Type': 'application/json' 
         }
-    }).then(res => res.json())
+    }).then(res => {return res.json()})
       .then(()=> console.log("successfully added to click up!"))
       .then(json => {
         console.log('json')
